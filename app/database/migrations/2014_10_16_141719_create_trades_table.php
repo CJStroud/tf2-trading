@@ -15,7 +15,7 @@ class CreateTradesTable extends Migration {
 		Schema::create('trades', function(Blueprint $table)
 		{
 			$table->increments('id');
-            $table->string('item-name');
+            $table->string('item_name');
             $table->double('buy_price');
             $table->double('sell_price');
             $table->timestamp('buy_date');
