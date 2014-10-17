@@ -1,6 +1,16 @@
+h3.title{
+	margin:0 0 10px 0;
+	padding-bottom: 5px;
+	border-bottom:1px dotted #ddd;
+}
+
 .row-table-header{
 	border-bottom: 1px solid #ddd;
-	margin-bottom: 5px;
+	font-weight: bold;
+}
+
+.trades-row p{
+	margin:0;
 }
 
 @media screen and (max-width:770px){
@@ -19,16 +29,17 @@
 		margin-right:20px;
 		text-align: right;
 	}
+	.trades-row div{
+		padding:5px;
+	}
 
 
 }
 
 .trades-row {
-	padding:20px;
-	border-bottom: 1px solid #c9c9c9;
-	box-shadow: inset 0px 3px 5px 0px #ddd;
-	border-radius: 10px;
-	margin-top:10px;
-	margin-bottom: 10px;
-	background-color:#eee;
+	border-bottom: 1px solid #ddd;
+	padding:10px 0px;
+}
+.trades-row:hover{
+	background-color:#efefef;
 }
