@@ -167,6 +167,11 @@ class TradeController extends \BaseController {
 
         $trade->buy_date = $timeStamp;
 
+		$dateTime = DateTime::createFromFormat("d/m/Y", Input::get('sell_date'));
+        $timeStamp = $dateTime->getTimeStamp();
+
+        $trade->sell_date = $timeStamp;
+
         $trade->save();
         return Redirect::route('trade.index');
 	}
