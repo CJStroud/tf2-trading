@@ -1,6 +1,16 @@
 <h3 class="title">Edit - {{ $trade->item_name }}</h3>
 
-{{ Form::model($trade, ['route' => ['trade.update', $trade->id], 'class' => 'form-horizontal', 'role' => 'form']) }}
+@if (isset($errors))
+
+@foreach($errors->all() as $error)
+
+{{$error}}
+
+@endforeach
+
+@endif
+
+{{ Form::model($trade, ['route' => ['trade.update', $trade->id], 'class' => 'form-horizontal', 'role' => 'form', 'method' => 'PUT']) }}
 
 	<div class="form-group">
 		<div class="col-xs-12">
@@ -91,6 +101,12 @@
 			</div>
 		</div>
 
+	</div>
+
+    <div class="form-group">
+		<div class="col-xs-12">
+			{{ Form::submit('Submit', ['class' => 'btn btn-default']) }}
+		</div>
 	</div>
 
 {{ Form::close() }}
