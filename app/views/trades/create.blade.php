@@ -1,5 +1,16 @@
 <h3 class="title">New Trade</h3>
 
+
+@if (isset($errors))
+
+@foreach($errors->all() as $error)
+
+{{$error}}
+
+@endforeach
+
+@endif
+
 {{ Form::open(array('route' => 'trade.store', 'class' => 'form-horizontal', 'role' => 'form')) }}
 	<div class="form-group">
 		<div class="col-xs-12">
@@ -17,13 +28,13 @@
 		<div class="col-xs-12 col-sm-4">
 			<div class="input-group">
 				<div class="input-group-addon">refined</div>
-				{{ Form::number('buy_price_ref', null, ['class' => 'form-control', 'placeholder' => 'E.g. 3']) }}
+				{{ Form::number('buy_price_refined', null, ['class' => 'form-control', 'placeholder' => 'E.g. 3']) }}
 			</div>
 		</div>
 		<div class="col-xs-12 col-sm-4">
 			<div class="input-group">
 				<div class="input-group-addon">reclaimed</div>
-				{{ Form::number('buy_price_rec', null, ['class' => 'form-control', 'placeholder' => 'E.g. 2']) }}
+				{{ Form::number('buy_price_reclaimed', null, ['class' => 'form-control', 'placeholder' => 'E.g. 2']) }}
 			</div>
 		</div>
 		<div class="col-xs-12 col-sm-4">
@@ -43,13 +54,13 @@
 		<div class="col-xs-12 col-sm-4">
 			<div class="input-group">
 				<div class="input-group-addon">refined</div>
-				{{ Form::number('sell_price_ref', null, ['class' => 'form-control', 'placeholder' => 'E.g. 3']) }}
+				{{ Form::number('sell_price_refined', null, ['class' => 'form-control', 'placeholder' => 'E.g. 3']) }}
 			</div>
 		</div>
 		<div class="col-xs-12 col-sm-4">
 			<div class="input-group">
 				<div class="input-group-addon">reclaimed</div>
-				{{ Form::number('sell_price_rec', null, ['class' => 'form-control', 'placeholder' => 'E.g. 2']) }}
+				{{ Form::number('sell_price_reclaimed', null, ['class' => 'form-control', 'placeholder' => 'E.g. 2']) }}
 			</div>
 		</div>
 		<div class="col-xs-12 col-sm-4">
@@ -70,7 +81,7 @@
 				<span class="input-group-addon">
 					<i class="glyphicon glyphicon-th"></i>
 				</span>
-				<input type="text" class="form-control" value="{{ date('d/m/Y') }}">
+                {{ Form::text('buy_date', date('d/m/Y'), ['class'=>'form-control']) }}
 			</div>
 		</div>
 
