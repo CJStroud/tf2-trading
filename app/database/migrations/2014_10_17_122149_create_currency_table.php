@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTradesTable extends Migration {
+class CreateCurrencyTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,15 +12,11 @@ class CreateTradesTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('trades', function(Blueprint $table)
+		Schema::create('currency', function(Blueprint $table)
 		{
 			$table->increments('id');
             $table->string('item_name');
-            $table->double('buy_price');
-            $table->double('sell_price');
-            $table->timestamp('buy_date');
-            $table->timestamp('sell_date')->nullable();
-            $table->boolean('is_active')->default(true);
+            $table->integer('scrap_value');
 			$table->timestamps();
 		});
 	}
@@ -32,7 +28,7 @@ class CreateTradesTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('trades');
+		Schema::drop('currency');
 	}
 
 }
