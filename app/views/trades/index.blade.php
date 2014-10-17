@@ -38,7 +38,7 @@
 					<?php
 						$currency = Currency::find(Session::get('currency'));
 						if($currency != null){
-							echo round($trade->buy_price / $currency->scrap_value, 2);
+							echo substr((string)($trade->buy_price / $currency->scrap_value), 0, 4);
 						}
 					?>
 				</p>
@@ -49,7 +49,7 @@
 					<?php
 						$currency = Currency::find(Session::get('currency'));
 						if($currency != null){
-							echo round($trade->sell_price / $currency->scrap_value, 2);
+							echo substr((string)($trade->sell_price / $currency->scrap_value), 0, 4);
 						}
 					?>
 				</p>
