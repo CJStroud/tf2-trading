@@ -42,4 +42,5 @@ h3.title{
 }
 .trades-row:hover{
 	background-color:#efefef;
+	cursor:pointer;
 }
