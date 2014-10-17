@@ -11,8 +11,8 @@
         </div>
         <div class="collapse navbar-collapse" id="navbar-collapse">
             <ul class="nav navbar-nav">
-                <li><a href='#'><i class='glyphicon glyphicon-transfer'></i> Trades</a></li>
-                <li><a href='#'><i class='glyphicon glyphicon-flash'></i> New Trade</a></li>
+                <li><a href={{ route('trade.index') }}><i class='glyphicon glyphicon-transfer'></i> Trades</a></li>
+                <li><a href={{ route('trade.create') }}><i class='glyphicon glyphicon-flash'></i> New Trade</a></li>
 				<li><a href='#'><i class='fa fa-line-chart'></i> Analytics</a></li>
             </ul>
         </div>
