@@ -36,7 +36,7 @@ class TradeController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		dd(Input::all());
 	}
 
 

@@ -60,7 +60,40 @@
 		</div>
 	</div>
 <!-- endregion -->
+	<div class="form-group">
+		<div class="col-xs-12">
+			{{ Form::label('buy_date', 'Buy Date') }}
+		</div>
 
+		<div class="col-xs-12">
+			<div class="input-group date buy_date">
+				<span class="input-group-addon">
+					<i class="glyphicon glyphicon-th"></i>
+				</span>
+				<input type="text" class="form-control" value="{{ date('d/m/Y') }}">
+			</div>
+		</div>
 
-
+	</div>
+	<div class="form-group">
+		<div class="col-xs-12">
+			{{ Form::submit('Submit', ['class' => 'btn btn-default']) }}
+		</div>
+	</div>
 {{ Form::close() }}
+
+@section('javascript')
+	@parent
+
+	<script>
+		$(document).ready(function(){
+			$('.buy_date').datepicker({
+				format: "dd/mm/yyyy",
+				todayBtn: "linked",
+				endDate: Date('dd/mm/yyyy')
+			});
+		});
+
+	</script>
+@stop
+
