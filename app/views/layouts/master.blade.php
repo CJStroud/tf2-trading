@@ -2,7 +2,10 @@
 <html>
     
     <head>
-        {{ HTML::style('components/bootstrap/dist/css/bootstrap.min.css') }}    
+        {{ HTML::style('components/bootstrap/dist/css/bootstrap.min.css') }}
+		{{ HTML::style('components/font-awesome/css/font-awesome.min.css') }}
+		{{ HTML::style('css/styles.css') }}
+
     </head>
     
     <body>
