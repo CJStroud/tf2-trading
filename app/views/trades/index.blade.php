@@ -77,14 +77,6 @@
 				<i class="glyphicon glyphicon-pencil"></i> Edit</a>
 		</div>
 
-		{{ Form::open(['route' => ['trade.destroy', $trade->id], 'method' => 'DELETE']) }}
-			<div class='col-md-1 col-sm-2 col-xs-6'>
-				<button class="btn btn-danger">
-					<i class="glyphicon glyphicon-trash"></i> Delete
-				</button>
-			</div>
-
-		{{ Form::close() }}
 	</div>
 
 @endforeach

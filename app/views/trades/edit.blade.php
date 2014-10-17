@@ -104,14 +104,25 @@
 		</div>
 
 	</div>
-
-    <div class="form-group">
-		<div class="col-xs-12">
+	<div class="form-group">
+		<div class="col-md-1 col-sm-2 col-xs-6">
 			{{ Form::submit('Submit', ['class' => 'btn btn-default']) }}
 		</div>
+		{{ Form::close() }}
+
+		{{ Form::open(['route' => ['trade.destroy', $trade->id], 'method' => 'DELETE']) }}
+		<div class='col-md-1 col-sm-2 col-xs-6'>
+			<button class="btn btn-danger">
+				<i class="glyphicon glyphicon-trash"></i> Delete
+			</button>
+		</div>
+		{{ Form::close() }}
 	</div>
 
-{{ Form::close() }}
+
+
+
+
 
 @section('javascript')
 	@parent

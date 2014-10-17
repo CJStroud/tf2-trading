@@ -189,8 +189,7 @@ class TradeController extends \BaseController {
 
 		$trade->delete();
 
-		return Redirect::back();
-	}
+		return Redirect::route('trade.index');	}
 
 	public function currency()
 	{
