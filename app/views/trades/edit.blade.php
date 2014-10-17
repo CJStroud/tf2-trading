@@ -81,7 +81,7 @@
 				<span class="input-group-addon">
 					<i class="glyphicon glyphicon-th"></i>
 				</span>
-                {{ Form::text('buy_date', date('d/m/Y'), ['class'=>'form-control']) }}
+                {{ Form::text('buy_date', date('d/m/Y', $trade->buy_date), ['class'=>'form-control']) }}
 			</div>
 		</div>
 
@@ -97,7 +97,7 @@
 				<span class="input-group-addon">
 					<i class="glyphicon glyphicon-th"></i>
 				</span>
-                {{ Form::text('sell_date', date('d/m/Y'), ['class'=>'form-control']) }}
+                {{ Form::text('sell_date', date('d/m/Y', $trade->sell_date), ['class'=>'form-control']) }}
 			</div>
 		</div>
 
