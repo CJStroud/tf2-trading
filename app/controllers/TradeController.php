@@ -82,7 +82,8 @@ class TradeController extends \BaseController {
 
         $trade->save();
 
-        $this->layout->content = View::make('trades.index')->withTrades($trades);
+		return Redirect::route('trade.index');
+
 	}
 
 
@@ -130,7 +131,11 @@ class TradeController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		$trade = Trade::find($id);
+
+		$trade->delete();
+
+		return Redirect::back();
 	}
 
 

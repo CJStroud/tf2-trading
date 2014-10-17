@@ -23,6 +23,12 @@ h3.title{
 	.trades-row .row-table-cell:nth-child(3)::before{
 		content: 'Sell Price:';
 	}
+	.trades-row .row-table-cell:nth-child(4)::before{
+		content: 'Purchased date:';
+	}
+	.trades-row .row-table-cell:nth-child(5)::before{
+		content: 'Sold date:';
+	}
 	.trades-row div::before{
 		font-weight: bold;
 		float:left;
@@ -70,6 +76,9 @@ h3.title{
 	background-color:#253748;
 	color:#fff;
 }
+.btn i{
+	margin-right: 3px;
+}
 
 .trades-row {
 	border-bottom: 1px solid #ddd;
@@ -81,4 +90,7 @@ h3.title{
 }
 a.row-link{
 	color:#222;
+}
+.text-center{
+	text-align: center;
 }
