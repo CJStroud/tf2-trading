@@ -7,7 +7,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            {{ link_to_route('trade.index', 'Home', null, ['class' => 'navbar-brand']) }}
+            {{ link_to_route('trade.index', 'TF2 Trading', null, ['class' => 'navbar-brand']) }}
         </div>
         <div class="collapse navbar-collapse" id="navbar-collapse">
             <ul class="nav navbar-nav">
