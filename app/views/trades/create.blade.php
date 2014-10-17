@@ -16,8 +16,8 @@
 		</div>
 		<div class="col-xs-12 col-sm-4">
 			<div class="input-group">
-				<div class="input-group-addon">scrap</div>
-				{{ Form::number('buy_price_scrap', null, ['class' => 'form-control', 'placeholder' => 'E.g. 2']) }}
+				<div class="input-group-addon">refined</div>
+				{{ Form::number('buy_price_ref', null, ['class' => 'form-control', 'placeholder' => 'E.g. 3']) }}
 			</div>
 		</div>
 		<div class="col-xs-12 col-sm-4">
@@ -28,8 +28,8 @@
 		</div>
 		<div class="col-xs-12 col-sm-4">
 			<div class="input-group">
-				<div class="input-group-addon">refined</div>
-				{{ Form::number('buy_price_ref', null, ['class' => 'form-control', 'placeholder' => 'E.g. 2']) }}
+				<div class="input-group-addon">scrap</div>
+				{{ Form::number('buy_price_scrap', null, ['class' => 'form-control', 'placeholder' => 'E.g. 1']) }}
 			</div>
 		</div>
 	</div>
@@ -42,8 +42,8 @@
 		</div>
 		<div class="col-xs-12 col-sm-4">
 			<div class="input-group">
-				<div class="input-group-addon">scrap</div>
-				{{ Form::number('sell_price_scrap', null, ['class' => 'form-control', 'placeholder' => 'E.g. 2']) }}
+				<div class="input-group-addon">refined</div>
+				{{ Form::number('sell_price_ref', null, ['class' => 'form-control', 'placeholder' => 'E.g. 3']) }}
 			</div>
 		</div>
 		<div class="col-xs-12 col-sm-4">
@@ -54,8 +54,8 @@
 		</div>
 		<div class="col-xs-12 col-sm-4">
 			<div class="input-group">
-				<div class="input-group-addon">refined</div>
-				{{ Form::number('sell_price_ref', null, ['class' => 'form-control', 'placeholder' => 'E.g. 2']) }}
+				<div class="input-group-addon">scrap</div>
+				{{ Form::number('sell_price_scrap', null, ['class' => 'form-control', 'placeholder' => 'E.g. 1']) }}
 			</div>
 		</div>
 	</div>

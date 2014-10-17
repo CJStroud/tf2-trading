@@ -35,8 +35,40 @@ h3.title{
 	.btn{
 		width:100%;
 	}
+	.form-group div{
+		margin-bottom: 3px;
+	}
+}
 
+.navbar-default{
+	background-color:#34495e;
+	color:#fff;
+	border:0;
+	border-radius: 0;
+}
+.navbar-default .navbar-nav>li>a{
+	color:#fff;
+}
+.navbar-default .navbar-nav>li>a:hover,
+.navbar-default .navbar-nav>li>a:focus{
+	color:#bbb;
+}
 
+.navbar-default .navbar-brand{
+	color:#fff;
+}
+.navbar-default .navbar-brand:hover{
+	color:#bbb;
+}
+
+.btn-default{
+	background-color:#34495e;
+	color:#fff;
+	border-color:#39556f;
+}
+.btn-default:hover{
+	background-color:#253748;
+	color:#fff;
 }
 
 .trades-row {

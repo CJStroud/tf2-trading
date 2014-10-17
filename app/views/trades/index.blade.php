@@ -32,11 +32,11 @@
 			</div>
 		</a>
 		<div class='col-sm-1 col-xs-12'>
-			<a class="btn btn-default" href="{{ route('trade.show', ['trade' => $trade->id] ) }}">View</a>
+			<a class="btn btn-info" href="{{ route('trade.show', ['trade' => $trade->id] ) }}">View</a>
 		</div>
 
 		<div class='col-sm-1 col-xs-12'>
-			<a class="btn btn-default" href="{{ route('trade.edit', ['trade' => $trade->id] ) }}">Edit</a>
+			<a class="btn btn-success" href="{{ route('trade.edit', ['trade' => $trade->id] ) }}">Edit</a>
 		</div>
 	</div>
 
