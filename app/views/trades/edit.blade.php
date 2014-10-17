@@ -1,13 +1,15 @@
 <h3 class="title">Edit - {{ $trade->item_name }}</h3>
 
-@if (isset($errors))
+@if (count($errors->all()))
+	<div class="alert alert-danger alert-dismissible" role="alert">
+	  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+	@foreach($errors->all() as $error)
 
-@foreach($errors->all() as $error)
+		<p>{{$error}}</p>
 
-{{$error}}
+	@endforeach
 
-@endforeach
-
+	</div>
 @endif
 
 {{ Form::model($trade, ['route' => ['trade.update', $trade->id], 'class' => 'form-horizontal', 'role' => 'form', 'method' => 'PUT']) }}
