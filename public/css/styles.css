@@ -14,13 +14,13 @@ h3.title{
 }
 
 @media screen and (max-width:770px){
-	.trades-row div:nth-child(1)::before{
+	.trades-row .row-table-cell:nth-child(1)::before{
 		content: 'Item Name:';
 	}
-	.trades-row div:nth-child(2)::before{
+	.trades-row .row-table-cell:nth-child(2)::before{
 		content: 'Buy Price:';
 	}
-	.trades-row div:nth-child(3)::before{
+	.trades-row .row-table-cell:nth-child(3)::before{
 		content: 'Sell Price:';
 	}
 	.trades-row div::before{
@@ -31,6 +31,9 @@ h3.title{
 	}
 	.trades-row div{
 		padding:5px;
+	}
+	.trades-row .btn{
+		width:100%;
 	}
 
 
@@ -43,4 +46,7 @@ h3.title{
 .trades-row:hover{
 	background-color:#efefef;
 	cursor:pointer;
+}
+a.row-link{
+	color:#222;
 }

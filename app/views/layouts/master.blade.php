@@ -5,7 +5,7 @@
         {{ HTML::style('components/bootstrap/dist/css/bootstrap.min.css') }}
 		{{ HTML::style('components/font-awesome/css/font-awesome.min.css') }}
 		{{ HTML::style('css/styles.css') }}
-
+		<meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     
     <body>

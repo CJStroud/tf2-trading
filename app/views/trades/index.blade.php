@@ -17,19 +17,27 @@
 
 @foreach($trades as $trade)
 
-    <div class="row trades-row">
-        <div class='col-sm-3 col-xs-12'>
-            <p>{{$trade->item_name}}</p>
-        </div>
+	<div class="row trades-row">
+		<a class="row-link" href="{{ route('trade.show', ['trade' => $trade->id] ) }}">
+			<div class='col-sm-3 col-xs-12 row-table-cell'>
+				<p>{{$trade->item_name}}</p>
+			</div>
 
-        <div class='col-sm-3 col-xs-12'>
-            <p>{{$trade->buy_price}}</p>
-        </div>
+			<div class='col-sm-3 col-xs-12 row-table-cell'>
+				<p>{{$trade->buy_price}}</p>
+			</div>
 
-        <div class='col-sm-3 col-xs-12'>
-            <p>{{$trade->sell_price}}</p>
-        </div>
+			<div class='col-sm-3 col-xs-12 row-table-cell'>
+				<p>{{$trade->sell_price}}</p>
+			</div>
+		</a>
+		<div class='col-sm-1 col-xs-12'>
+			<a class="btn btn-default" href="{{ route('trade.show', ['trade' => $trade->id] ) }}">View</a>
+		</div>
 
-    </div>
+		<div class='col-sm-1 col-xs-12'>
+			<a class="btn btn-default" href="{{ route('trade.edit', ['trade' => $trade->id] ) }}">Edit</a>
+		</div>
+	</div>
 
 @endforeach
