@@ -94,3 +94,6 @@ a.row-link{
 .text-center{
 	text-align: center;
 }
+.navbar .currency-type{
+	margin-top:8px;
+}

@@ -1,5 +1,6 @@
 <h3 class="title">Trades</h3>
 
+
 <div class="row row-table-header hidden-xs">
         <div class='col-sm-2 col-xs-12'>
 			<p>Item Name</p>
@@ -33,7 +34,14 @@
 			</div>
 
 			<div class='col-sm-1 col-xs-12 row-table-cell'>
-				<p>{{$trade->buy_price}}</p>
+				<p>
+					<?php
+						$currency = Currency::find(Session::get('currency'));
+						if($currency != null){
+							echo ($trade->buy_price / $currency->scrap_value);
+						}
+					?>
+				</p>
 			</div>
 
 			<div class='col-sm-1 col-xs-12 row-table-cell'>

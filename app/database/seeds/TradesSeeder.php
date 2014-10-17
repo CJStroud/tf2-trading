@@ -6,17 +6,17 @@ class TradesSeeder extends Seeder  {
     {
         DB::table('trades')->delete();
         
-        Trade::create(['buy_price' => 2.33,
+        Trade::create(['buy_price' => 18,
                        'item_name' => 'example-hat',
-                       'sell_price' => 3,
+                       'sell_price' => 30,
                        'is_active' => false,
                        'buy_date' => 1413460039,
                        'sell_date' => 1413470039
                       ]);
         
-        Trade::create(['buy_price' => 1.33,
+        Trade::create(['buy_price' => 12,
                        'item_name' => 'example-hat',
-                       'sell_price' => 2,
+                       'sell_price' => 90,
                        'is_active' => false,
                        'buy_date' => 1413460039,
                        'sell_date' => 1413470039

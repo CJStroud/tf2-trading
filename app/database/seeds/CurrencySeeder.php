@@ -14,6 +14,9 @@ class CurrencySeeder extends Seeder  {
 
         Currency::create(['item_name' => 'refined',
                        'scrap_value' => 9, ]);
+
+		Currency::create(['item_name' => 'key',
+                       'scrap_value' => 81, ]);
     }
 
 }

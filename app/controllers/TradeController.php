@@ -63,16 +63,16 @@ class TradeController extends \BaseController {
                    'reclaimed' => Input::get('buy_price_reclaimed'),
                    'refined' => Input::get('buy_price_refined')];
 
-        $buyScrapValue = Currency::ConvertCurrency($buyValues);
+        $buyScrapValue = Currency::ConvertTo($buyValues, 'scrap');
 
         $sellValues = ['scrap' => Input::get('sell_price_scrap'),
                    'reclaimed' => Input::get('sell_price_reclaimed'),
                    'refined' => Input::get('sell_price_refined')];
 
-        $sellScrapValue = Currency::ConvertCurrency($sellValues);
+        $sellScrapValue = Currency::ConvertTo($sellValues, 'scrap');
 
-        $trade->buy_price = $buyScrapValue;
-        $trade->sell_price = $sellScrapValue;
+        $trade->buy_price = $buyScrapValue['scrap'];
+        $trade->sell_price = $sellScrapValue['scrap'];
         date_default_timezone_set('Europe/London');
 
         $dateTime = DateTime::createFromFormat("d/m/Y", Input::get('buy_date'));
@@ -107,7 +107,12 @@ class TradeController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+		$trade = Trade::find($id);
+
+		$trade->buy_price = json_decode(json_encode(Currency::ConvertTo(['scrap' => $trade->buy_price], 'refined')));
+		$trade->sell_price = json_decode(json_encode(Currency::ConvertTo(['scrap' => $trade->sell_price], 'refined')));
+
+		$this->layout->content = View::make('trades.edit')->withTrade($trade);
 	}
 
 
@@ -134,6 +139,13 @@ class TradeController extends \BaseController {
 		$trade = Trade::find($id);
 
 		$trade->delete();
+
+		return Redirect::back();
+	}
+
+	public function currency()
+	{
+		Session::put('currency', Input::get('currency'));
 
 		return Redirect::back();
 	}
