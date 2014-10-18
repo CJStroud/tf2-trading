@@ -40,6 +40,9 @@
 						if($currency != null){
 							echo substr((string)($trade->buy_price / $currency->scrap_value), 0, 4);
 						}
+                        else {
+							echo (string)((float)$trade->buy_price);
+                        }
 					?>
 				</p>
 			</div>
@@ -51,6 +54,9 @@
 						if($currency != null){
 							echo substr((string)($trade->sell_price / $currency->scrap_value), 0, 4);
 						}
+                        else {
+							echo (string)((float)$trade->sell_price);
+                        }
 					?>
 				</p>
 			</div>
