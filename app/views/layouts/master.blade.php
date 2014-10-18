@@ -14,6 +14,25 @@
         @include('partials.navigation')
         
         <div class="container">
+          <h3 class="title col-sm-8">{{$title}}</h3>
+           {{ Form::open(['action' => 'TradeController@currency', 'class' => 'col-sm-4 form-horizontal currency-form ', 'role' => 'form']) }}
+				<?php
+					$currencies = Currency::all();
+				 	$currencies_array = [];
+					foreach($currencies as $currency)
+					{
+						$currencies_array[$currency->id] = ucfirst($currency->item_name);
+				 	}
+				?>
+			<div class="form-group">
+			{{ Form::label('currency', 'Currency:', ['class' => 'col-sm-4 control-label']) }}
+				<div class="col-sm-8">
+					{{ Form::select('currency', $currencies_array, Session::get('currency'), ['class' => ' form-control currency-type']) }}
+				</div>
+
+			</div>
+			{{ Form::close() }}
+
             {{ $content }}
         </div>
         

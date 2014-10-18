@@ -8,17 +8,6 @@
                 <span class="icon-bar"></span>
             </button>
             {{ link_to_route('trade.index', 'TF2 Trading', null, ['class' => 'navbar-brand']) }}
-			{{ Form::open(['action' => 'TradeController@currency', 'class' => 'form-inline pull-left currency-form', 'role' => 'form']) }}
-				<?php
-					$currencies = Currency::all();
-				 	$currencies_array = [];
-					foreach($currencies as $currency)
-					{
-						$currencies_array[$currency->id] = ucfirst($currency->item_name);
-				 	}
-				?>
-				{{ Form::select('currency', $currencies_array, Session::get('currency'), ['class' => 'pull-left form-control currency-type']) }}
-			{{ Form::close() }}
         </div>
         <div class="collapse navbar-collapse" id="navbar-collapse">
             <ul class="nav navbar-nav">
@@ -28,5 +17,6 @@
             </ul>
 
         </div>
+
     </div>
 </nav>

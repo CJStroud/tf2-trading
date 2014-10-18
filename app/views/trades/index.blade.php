@@ -1,6 +1,3 @@
-<h3 class="title">Trades</h3>
-
-
 <div class="row row-table-header hidden-xs">
         <div class='col-sm-2 col-xs-12'>
 			<p>Item Name</p>

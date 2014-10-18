@@ -13,7 +13,7 @@ class TradeController extends \BaseController {
 	public function index()
 	{
         $trades = Trade::all();
-        
+        $this->layout->title = 'Trades';
         $this->layout->content = View::make('trades.index')->withTrades($trades);
 	}
 
@@ -25,6 +25,7 @@ class TradeController extends \BaseController {
 	 */
 	public function create()
 	{
+		$this->layout->title = 'New Trade';
         $this->layout->content = View::make('trades.create');
 	}
 
@@ -111,7 +112,7 @@ class TradeController extends \BaseController {
 
 		$trade->buy_price = json_decode(json_encode(Currency::ConvertTo(['scrap' => $trade->buy_price], 'refined')));
 		$trade->sell_price = json_decode(json_encode(Currency::ConvertTo(['scrap' => $trade->sell_price], 'refined')));
-
+		$this->layout->title = 'Edit Trade - ' . $trade->item_name;
 		$this->layout->content = View::make('trades.edit')->withTrade($trade);
 	}
 

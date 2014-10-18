@@ -1,5 +1,3 @@
-<h3 class="title">Edit - {{ $trade->item_name }}</h3>
-
 @if (count($errors->all()))
 	<div class="alert alert-danger alert-dismissible" role="alert">
 	  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
