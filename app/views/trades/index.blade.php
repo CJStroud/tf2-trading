@@ -78,7 +78,7 @@
 				<i class="glyphicon glyphicon-eye-open"></i> View</a>
 		</div>-->
 
-		<div class='col-md-1 col-sm-2 col-xs-6'>
+		<div class='col-md-1 col-sm-2 col-xs-12'>
 			<a class="btn btn-success" href="{{ route('trade.edit', ['trade' => $trade->id] ) }}">
 				<i class="glyphicon glyphicon-pencil"></i> Edit</a>
 		</div>

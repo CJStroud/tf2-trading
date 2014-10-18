@@ -20,7 +20,7 @@ class CreateTradesTable extends Migration {
             $table->double('sell_price');
             $table->timestamp('buy_date');
             $table->timestamp('sell_date')->nullable();
-            $table->boolean('is_active')->default(true);
+            $table->boolean('sold')->default(false);
 			$table->timestamps();
 		});
 	}
