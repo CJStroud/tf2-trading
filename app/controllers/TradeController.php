@@ -3,8 +3,8 @@
 
 class TradeController extends \BaseController {
 
-    public $layout = 'layouts.master';
-    
+	public $layout = 'layouts.master';
+
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -12,9 +12,10 @@ class TradeController extends \BaseController {
 	 */
 	public function index()
 	{
-        $trades = Trade::all();
-        $this->layout->title = 'Trades';
-        $this->layout->content = View::make('trades.index')->withTrades($trades);
+		$trades = Trade::all();
+		$this->layout->showCurrencySelector = true;
+		$this->layout->title = 'Trades';
+		$this->layout->content = View::make('trades.index')->withTrades($trades);
 	}
 
 
@@ -26,7 +27,7 @@ class TradeController extends \BaseController {
 	public function create()
 	{
 		$this->layout->title = 'New Trade';
-        $this->layout->content = View::make('trades.create');
+		$this->layout->content = View::make('trades.create');
 	}
 
 
@@ -38,50 +39,50 @@ class TradeController extends \BaseController {
 	public function store()
 	{
 
-        $validator = Validator::make(Input::all(),
-                                     ['item_name' => 'required',
-                                     'buy_price_scrap' => 'numeric|min:0',
-                                     'buy_price_reclaimed' => 'numeric|min:0',
-                                     'buy_price_refined' => 'numeric|min:0',
-                                     'sell_price_scrap' => 'numeric|min:0',
-                                     'sell_price_reclaimed' => 'numeric|min:0',
-                                     'sell_price_refined' => 'numeric|min:0',
-                                     'buy_date' => 'required|date_format:d/m/Y'
-                                     ]);
+		$validator = Validator::make(Input::all(),
+									['item_name' => 'required',
+									'buy_price_scrap' => 'numeric|min:0',
+									'buy_price_reclaimed' => 'numeric|min:0',
+									'buy_price_refined' => 'numeric|min:0',
+									'sell_price_scrap' => 'numeric|min:0',
+									'sell_price_reclaimed' => 'numeric|min:0',
+									'sell_price_refined' => 'numeric|min:0',
+									'buy_date' => 'required|date_format:d/m/Y'
+									]);
 
-        // dd($validator->messages());
+		// dd($validator->messages());
 
-        if ($validator->fails())
-        {
-            return Redirect::route('trade.create')->with('errors', $validator->messages());
-        }
+		if ($validator->fails())
+		{
+			return Redirect::route('trade.create')->with('errors', $validator->messages());
+		}
 
-        $trade = new Trade();
+		$trade = new Trade();
 
-        $trade->item_name = Input::get('item_name');
+		$trade->item_name = Input::get('item_name');
 
-        $buyValues = ['scrap' => Input::get('buy_price_scrap'),
-                   'reclaimed' => Input::get('buy_price_reclaimed'),
-                   'refined' => Input::get('buy_price_refined')];
+		$buyValues = ['scrap' => Input::get('buy_price_scrap'),
+					'reclaimed' => Input::get('buy_price_reclaimed'),
+					'refined' => Input::get('buy_price_refined')];
 
-        $buyScrapValue = Currency::ConvertTo($buyValues, 'scrap');
+		$buyScrapValue = Currency::ConvertTo($buyValues, 'scrap');
 
-        $sellValues = ['scrap' => Input::get('sell_price_scrap'),
-                   'reclaimed' => Input::get('sell_price_reclaimed'),
-                   'refined' => Input::get('sell_price_refined')];
+		$sellValues = ['scrap' => Input::get('sell_price_scrap'),
+					'reclaimed' => Input::get('sell_price_reclaimed'),
+					'refined' => Input::get('sell_price_refined')];
 
-        $sellScrapValue = Currency::ConvertTo($sellValues, 'scrap');
+		$sellScrapValue = Currency::ConvertTo($sellValues, 'scrap');
 
-        $trade->buy_price = $buyScrapValue['scrap'];
-        $trade->sell_price = $sellScrapValue['scrap'];
-        date_default_timezone_set('Europe/London');
+		$trade->buy_price = $buyScrapValue['scrap'];
+		$trade->sell_price = $sellScrapValue['scrap'];
+		date_default_timezone_set('Europe/London');
 
-        $dateTime = DateTime::createFromFormat("d/m/Y", Input::get('buy_date'));
-        $timeStamp = $dateTime->getTimeStamp();
+		$dateTime = DateTime::createFromFormat("d/m/Y", Input::get('buy_date'));
+		$timeStamp = $dateTime->getTimeStamp();
 
-        $trade->buy_date = $timeStamp;
+		$trade->buy_date = $timeStamp;
 
-        $trade->save();
+		$trade->save();
 
 		return Redirect::route('trade.index');
 
@@ -126,55 +127,55 @@ class TradeController extends \BaseController {
 	public function update($id)
 	{
 
-        $validator = Validator::make(Input::all(),
-                                     ['item_name' => 'required',
-                                     'buy_price_scrap' => 'numeric|min:0',
-                                     'buy_price_reclaimed' => 'numeric|min:0',
-                                     'buy_price_refined' => 'numeric|min:0',
-                                     'sell_price_scrap' => 'numeric|min:0',
-                                     'sell_price_reclaimed' => 'numeric|min:0',
-                                     'sell_price_refined' => 'numeric|min:0',
-                                     'buy_date' => 'required|date_format:d/m/Y'
-                                     ]);
+		$validator = Validator::make(Input::all(),
+									['item_name' => 'required',
+									'buy_price_scrap' => 'numeric|min:0',
+									'buy_price_reclaimed' => 'numeric|min:0',
+									'buy_price_refined' => 'numeric|min:0',
+									'sell_price_scrap' => 'numeric|min:0',
+									'sell_price_reclaimed' => 'numeric|min:0',
+									'sell_price_refined' => 'numeric|min:0',
+									'buy_date' => 'required|date_format:d/m/Y'
+									]);
 
 
-        if ($validator->fails())
-        {
-            return Redirect::back()->with('errors', $validator->messages());
-        }
+		if ($validator->fails())
+		{
+			return Redirect::back()->with('errors', $validator->messages());
+		}
 
 		$trade = Trade::find($id);
 
-        $trade->item_name = Input::get('item_name');
+		$trade->item_name = Input::get('item_name');
 
-        $buyValues = ['scrap' => Input::get('buy_price_scrap'),
-                   'reclaimed' => Input::get('buy_price_reclaimed'),
-                   'refined' => Input::get('buy_price_refined')];
+		$buyValues = ['scrap' => Input::get('buy_price_scrap'),
+					'reclaimed' => Input::get('buy_price_reclaimed'),
+					'refined' => Input::get('buy_price_refined')];
 
-        $buyScrapValue = Currency::ConvertTo($buyValues, 'scrap');
+		$buyScrapValue = Currency::ConvertTo($buyValues, 'scrap');
 
-        $sellValues = ['scrap' => Input::get('sell_price_scrap'),
-                   'reclaimed' => Input::get('sell_price_reclaimed'),
-                   'refined' => Input::get('sell_price_refined')];
+		$sellValues = ['scrap' => Input::get('sell_price_scrap'),
+					'reclaimed' => Input::get('sell_price_reclaimed'),
+					'refined' => Input::get('sell_price_refined')];
 
-        $sellScrapValue = Currency::ConvertTo($sellValues, 'scrap');
+		$sellScrapValue = Currency::ConvertTo($sellValues, 'scrap');
 
-        $trade->buy_price = $buyScrapValue['scrap'];
-        $trade->sell_price = $sellScrapValue['scrap'];
-        date_default_timezone_set('Europe/London');
+		$trade->buy_price = $buyScrapValue['scrap'];
+		$trade->sell_price = $sellScrapValue['scrap'];
+		date_default_timezone_set('Europe/London');
 
-        $dateTime = DateTime::createFromFormat("d/m/Y", Input::get('buy_date'));
-        $timeStamp = $dateTime->getTimeStamp();
+		$dateTime = DateTime::createFromFormat("d/m/Y", Input::get('buy_date'));
+		$timeStamp = $dateTime->getTimeStamp();
 
-        $trade->buy_date = $timeStamp;
+		$trade->buy_date = $timeStamp;
 
 		$dateTime = DateTime::createFromFormat("d/m/Y", Input::get('sell_date'));
-        $timeStamp = $dateTime->getTimeStamp();
+		$timeStamp = $dateTime->getTimeStamp();
 
-        $trade->sell_date = $timeStamp;
+		$trade->sell_date = $timeStamp;
 
-        $trade->save();
-        return Redirect::route('trade.index');
+		$trade->save();
+		return Redirect::route('trade.index');
 	}
 
 
