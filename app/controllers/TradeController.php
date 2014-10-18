@@ -13,6 +13,19 @@ class TradeController extends \BaseController {
 	public function index()
 	{
 		$trades = Trade::all();
+
+		foreach($trades as $trade)
+		{
+			$currency = Currency::find(Session::get('currency'));
+			if($currency != null){
+				$trade->buy_price = substr((string)($trade->buy_price / $currency->scrap_value), 0, 4);
+				$trade->sell_price = substr((string)($trade->sell_price / $currency->scrap_value), 0, 4);
+			}
+			else {
+				$trade->buy_price = (string)((float)$trade->buy_price);
+				$trade->sell_price = (string)((float)$trade->sell_price);
+			}
+		}
 		$this->layout->showCurrencySelector = true;
 		$this->layout->title = 'Trades';
 		$this->layout->content = View::make('trades.index')->withTrades($trades);
