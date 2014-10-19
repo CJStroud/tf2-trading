@@ -120,10 +120,6 @@
 	</div>
 
 
-
-
-
-
 @section('javascript')
 	@parent
 
@@ -133,7 +129,8 @@
 				format: "dd/mm/yyyy",
 				todayBtn: "linked",
 				startDate: '01/01/2012',
-				endDate: Date('dd/mm/yyyy')
+				endDate: Date('dd/mm/yyyy'),
+				autoclose: true
 			});
 		});
 
@@ -142,7 +139,8 @@
 				format: "dd/mm/yyyy",
 				todayBtn: "linked",
 				endDate: Date('dd/mm/yyyy'),
-				startDate: '01/01/2012'
+				startDate: '01/01/2012',
+				autoclose: true
 			});
 		});
 
