@@ -93,7 +93,7 @@
 
 	</div>
 	<div class="form-group">
-		<div class="col-md-1 col-sm-2 col-xs-6">
+		<div class="col-sm-2 col-xs-6">
 			<button class="btn btn-default">
 				<i class="glyphicon glyphicon-ok"></i> Submit
 			</button>
@@ -101,7 +101,7 @@
 		{{ Form::close() }}
 
 		{{ Form::open(['route' => ['trade.destroy', $trade->id], 'method' => 'DELETE']) }}
-		<div class='col-md-1 col-sm-2 col-xs-6'>
+		<div class='col-sm-2 col-xs-6'>
 			<button class="btn btn-danger">
 				<i class="glyphicon glyphicon-trash"></i> Delete
 			</button>
@@ -110,7 +110,7 @@
 
 		@if($trade->sold)
 			{{ Form::open(['action' => ['TradeController@unsold', $trade->id], 'method' => 'POST']) }}
-			<div class='col-md-1 col-sm-2 col-xs-12'>
+			<div class='col-sm-2 col-xs-12'>
 				<button class="btn btn-primary">
 					<i class="glyphicon glyphicon-gbp"></i> Unsold
 				</button>
