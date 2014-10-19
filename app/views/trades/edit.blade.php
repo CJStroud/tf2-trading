@@ -81,7 +81,7 @@
 				<span class="input-group-addon">
 					<i class="glyphicon glyphicon-th"></i>
 				</span>
-                {{ Form::text('buy_date', date('d/m/Y', $trade->buy_date), ['class'=>'form-control']) }}
+				{{ Form::text('buy_date', $trade->buy_date, ['class'=>'form-control']) }}
 			</div>
 		</div>
 
@@ -97,7 +97,7 @@
 				<span class="input-group-addon">
 					<i class="glyphicon glyphicon-th"></i>
 				</span>
-                {{ Form::text('sell_date', date('d/m/Y', $trade->sell_date), ['class'=>'form-control']) }}
+				{{ Form::text('sell_date', $trade->sell_date, ['class'=>'form-control']) }}
 			</div>
 		</div>
 
@@ -130,7 +130,7 @@
 			$('.buy_date').datepicker({
 				format: "dd/mm/yyyy",
 				todayBtn: "linked",
-				startDate: '02/01/1970',
+				startDate: '01/01/2012',
 				endDate: Date('dd/mm/yyyy')
 			});
 		});
@@ -140,7 +140,7 @@
 				format: "dd/mm/yyyy",
 				todayBtn: "linked",
 				endDate: Date('dd/mm/yyyy'),
-				startDate: '02/01/1970'
+				startDate: '01/01/2012'
 			});
 		});
 

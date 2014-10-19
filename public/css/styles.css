@@ -1,99 +1,99 @@
 h3.title{
-	margin:0 0 10px 0;
-	padding-bottom: 5px;
-	border-bottom:1px dotted #ddd;
+    margin:0 0 10px 0;
+    padding-bottom: 5px;
+    border-bottom:1px dotted #ddd;
 }
 
 .row-table-header{
-	border-bottom: 1px solid #ddd;
-	font-weight: bold;
+    border-bottom: 1px solid #ddd;
+    font-weight: bold;
 }
 
 .trades-row p{
-	margin:0;
+    margin:0;
 }
 
 @media screen and (max-width:770px){
-	.trades-row .row-table-cell:nth-child(1)::before{
-		content: 'Item Name:';
-	}
-	.trades-row .row-table-cell:nth-child(2)::before{
-		content: 'Buy Price:';
-	}
-	.trades-row .row-table-cell:nth-child(3)::before{
-		content: 'Sell Price:';
-	}
-	.trades-row .row-table-cell:nth-child(4)::before{
-		content: 'Purchased date:';
-	}
-	.trades-row .row-table-cell:nth-child(5)::before{
-		content: 'Sold date:';
-	}
-	.trades-row div::before{
-		font-weight: bold;
-		float:left;
-		margin-right:20px;
-		text-align: right;
-	}
-	.trades-row div{
-		padding:5px;
-	}
-	.btn{
-		width:100%;
-	}
-	.form-group div{
-		margin-bottom: 3px;
-	}
+    .trades-row .row-table-cell:nth-child(1)::before{
+        content: 'Item Name:';
+    }
+    .trades-row .row-table-cell:nth-child(2)::before{
+        content: 'Buy Price:';
+    }
+    .trades-row .row-table-cell:nth-child(3)::before{
+        content: 'Sell Price:';
+    }
+    .trades-row .row-table-cell:nth-child(4)::before{
+        content: 'Purchased date:';
+    }
+    .trades-row .row-table-cell:nth-child(5)::before{
+        content: 'Sold date:';
+    }
+    .trades-row div::before{
+        font-weight: bold;
+        float:left;
+        margin-right:20px;
+        text-align: right;
+    }
+    .trades-row div{
+        padding:5px;
+    }
+    .btn{
+        width:100%;
+    }
+    .form-group div{
+        margin-bottom: 3px;
+    }
 }
 
 .navbar-default{
-	background-color:#34495e;
-	color:#fff;
-	border:0;
-	border-radius: 0;
+    background-color:#34495e;
+    color:#fff;
+    border:0;
+    border-radius: 0;
 }
 .navbar-default .navbar-nav>li>a{
-	color:#fff;
+    color:#fff;
 }
 .navbar-default .navbar-nav>li>a:hover,
 .navbar-default .navbar-nav>li>a:focus{
-	color:#bbb;
+    color:#bbb;
 }
 
 .navbar-default .navbar-brand{
-	color:#fff;
+    color:#fff;
 }
 .navbar-default .navbar-brand:hover{
-	color:#bbb;
+    color:#bbb;
 }
 
 .btn-default{
-	background-color:#34495e;
-	color:#fff;
-	border-color:#39556f;
+    background-color:#34495e;
+    color:#fff;
+    border-color:#39556f;
 }
 .btn-default:hover{
-	background-color:#253748;
-	color:#fff;
+    background-color:#253748;
+    color:#fff;
 }
 .btn i{
-	margin-right: 3px;
+    margin-right: 3px;
 }
 
 .trades-row {
-	border-bottom: 1px solid #ddd;
-	padding:10px 0px;
+    border-bottom: 1px solid #ddd;
+    padding:10px 0px;
 }
 .trades-row:hover{
-	background-color:#efefef;
-	cursor:pointer;
+    background-color:#efefef;
+    cursor:default;
 }
 a.row-link{
-	color:#222;
+    color:#222;
 }
 .text-center{
-	text-align: center;
+    text-align: center;
 }
 .navbar .currency-type{
-	margin-top:8px;
+    margin-top:8px;
 }

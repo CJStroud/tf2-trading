@@ -13,4 +13,5 @@
 
 Route::get('/', 'TradeController@index');
 Route::post('/currency', 'TradeController@currency');
+Route::post('/trade/{trade}/sold', 'TradeController@sold');
 Route::resource('trade', 'TradeController');
