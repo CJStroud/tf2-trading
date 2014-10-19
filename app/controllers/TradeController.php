@@ -189,6 +189,11 @@ class TradeController extends \BaseController {
 		$dateTime = DateTime::createFromFormat("d/m/Y", Input::get('sell_date'));
 		$timeStamp = (!$dateTime) ? 0 : $dateTime->getTimeStamp();
 
+		if($dateTime)
+		{
+			$trade->sold = true;
+		}
+
 		$trade->sell_date = $timeStamp;
 
 		$trade->save();
