@@ -1,14 +1,4 @@
-@if (count($errors->all()))
-	<div class="alert alert-danger alert-dismissible" role="alert">
-	  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-	@foreach($errors->all() as $error)
-
-		<p>{{$error}}</p>
-
-	@endforeach
-
-	</div>
-@endif
+@include('partials.errors')
 
 {{ Form::model($trade, ['route' => ['trade.update', $trade->id], 'class' => 'form-horizontal', 'role' => 'form', 'method' => 'PUT']) }}
 
@@ -104,7 +94,9 @@
 	</div>
 	<div class="form-group">
 		<div class="col-md-1 col-sm-2 col-xs-6">
-			{{ Form::submit('Submit', ['class' => 'btn btn-default']) }}
+			<button class="btn btn-default">
+				<i class="glyphicon glyphicon-ok"></i> Submit
+			</button>
 		</div>
 		{{ Form::close() }}
 
@@ -115,6 +107,16 @@
 			</button>
 		</div>
 		{{ Form::close() }}
+
+		@if($trade->sold)
+			{{ Form::open(['action' => ['TradeController@unsold', $trade->id], 'method' => 'POST']) }}
+			<div class='col-md-1 col-sm-2 col-xs-12'>
+				<button class="btn btn-primary">
+					<i class="glyphicon glyphicon-gbp"></i> Unsold
+				</button>
+			</div>
+			{{ Form::close() }}
+		@endif
 	</div>
 
 
