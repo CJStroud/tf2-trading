@@ -24,7 +24,15 @@
 
 @foreach($trades as $trade)
 
-<div class="row trades-row @if($trade->sold) bg-success @endif">
+<div class="row trades-row
+	@if($trade->sold && $trade->buy_price < $trade->sell_price)
+		bg-success
+	@elseif($trade->sold && $trade->buy_price == $trade->sell_price)
+		bg-info
+	@elseif($trade->sold && $trade->buy_price > $trade->sell_price)
+		bg-danger
+	@endif
+	">
 	<div class='col-sm-2 col-xs-12 row-table-cell'>
 		<p>{{$trade->item_name}}</p>
 	</div>
