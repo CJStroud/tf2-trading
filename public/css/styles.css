@@ -44,6 +44,9 @@ h3.title{
 	.form-group div{
 		margin-bottom: 3px;
 	}
+	.icon{
+		width:100%;
+	}
 }
 
 .navbar-default{
@@ -103,4 +106,36 @@ a.row-link{
 }
 .sold-icon i{
 	margin:0;
+}
+
+.icon{
+	display: inline-block;
+	padding: 6px 12px;
+	margin-bottom: 0;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.42857143;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+}
+
+.icon-success{
+	color: #fff;
+	background-color: #5cb85c;
+	border-color: #4cae4c;
+}
+
+.icon-danger{
+	color: #fff;
+	background-color: #d9534f;
+	border-color: #d43f3a;
+}
+.icon-info{
+	color: #fff;
+	background-color: #5bc0de;
+	border-color: #46b8da;
 }

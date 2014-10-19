@@ -61,13 +61,19 @@
 		@endif
 	</div>
 	@if ($trade->sold)
-		<div class='col-md-1 col-sm-2 col-xs-1 sold-icon'>
+		<div class='col-md-1 col-sm-2 col-xs-6 sold-icon'>
 			@if($trade->sold && $trade->buy_price < $trade->sell_price)
-			<button class="btn btn-success"><i class="glyphicon glyphicon-arrow-up"></i></button>
+			<span class="icon icon-success"><i class="glyphicon glyphicon-arrow-up"></i>
+				+{{ $trade->sell_price - $trade->buy_price  }}
+			</span>
 			@elseif($trade->sold && $trade->buy_price == $trade->sell_price)
-			<button class="btn btn-info"><i class="glyphicon glyphicon-minus"></i></button>
+			<span class="icon icon-info"><i class="glyphicon glyphicon-sort fa-rotate-90"></i>
+				0
+			</span>
 			@elseif($trade->sold && $trade->buy_price > $trade->sell_price)
-			<button class="btn btn-danger"><i class="glyphicon glyphicon-arrow-down"></i></button>
+			<span class="icon icon-danger"><i class="glyphicon glyphicon-arrow-down"></i>
+				{{ $trade->sell_price - $trade->buy_price }}
+			</span>
 			@endif
 
 		</div>
