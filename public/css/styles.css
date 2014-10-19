@@ -98,3 +98,9 @@ a.row-link{
 .navbar .currency-type{
 	margin-top:8px;
 }
+.text-center{
+	text-align: center;
+}
+.sold-icon i{
+	margin:0;
+}

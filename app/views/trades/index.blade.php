@@ -26,11 +26,11 @@
 
 <div class="row trades-row
 	@if($trade->sold && $trade->buy_price < $trade->sell_price)
-		bg-success
+		text-success
 	@elseif($trade->sold && $trade->buy_price == $trade->sell_price)
-		bg-info
+		text-info
 	@elseif($trade->sold && $trade->buy_price > $trade->sell_price)
-		bg-danger
+		text-danger
 	@endif
 	">
 	<div class='col-sm-2 col-xs-12 row-table-cell'>
@@ -60,12 +60,18 @@
 			<p class="text-warning">Unsold</p>
 		@endif
 	</div>
+	@if ($trade->sold)
+		<div class='col-md-1 col-sm-2 col-xs-1 sold-icon'>
+			@if($trade->sold && $trade->buy_price < $trade->sell_price)
+			<button class="btn btn-success"><i class="glyphicon glyphicon-arrow-up"></i></button>
+			@elseif($trade->sold && $trade->buy_price == $trade->sell_price)
+			<button class="btn btn-info"><i class="glyphicon glyphicon-minus"></i></button>
+			@elseif($trade->sold && $trade->buy_price > $trade->sell_price)
+			<button class="btn btn-danger"><i class="glyphicon glyphicon-arrow-down"></i></button>
+			@endif
 
-	<div class='col-md-1 col-sm-2 col-xs-6'>
-		<a class="btn btn-success" href="{{ route('trade.edit', ['trade' => $trade->id] ) }}">
-			<i class="glyphicon glyphicon-pencil"></i> Edit</a>
-	</div>
-	@if (!$trade->sold)
+		</div>
+	@else
 		{{ Form::open(['action' => ['TradeController@sold', $trade->id], 'method' => 'POST']) }}
 		<div class='col-md-1 col-sm-2 col-xs-6'>
 			<button class="btn btn-info">
@@ -74,5 +80,11 @@
 		</div>
 		{{ Form::close() }}
 	@endif
+
+	<div class='col-md-1 col-sm-2 col-xs-6'>
+		<a class="btn btn-warning" href="{{ route('trade.edit', ['trade' => $trade->id] ) }}">
+			<i class="glyphicon glyphicon-pencil"></i> Edit
+		</a>
+	</div>
 </div>
 @endforeach
