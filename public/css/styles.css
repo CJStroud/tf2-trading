@@ -86,13 +86,48 @@ h3.title{
 }
 
 .btn{
-	-webkit-transition-property: box-shadow, background-color;
-	transition-property: box-shadow, background-color;
-	-webkit-transition-duration: 0.3s, 0.3s;
-	transition-duration: 0.3s, 0.3s;
+	display: block;
+	font-size: 100%;
+	background-image: none;
+	padding-top:9px;
+	border-radius: 50%;
+	margin:0 auto;
+	width:40px;
+	height:40px;
+	-webkit-transition-property: border-radius, width, height;
+	transition-property: border-radius, width, height;
+	transition-duration: 0.2s, 0.2s, 0.2s;
+	transition-delay: 0.1s, 0s, 0s;
 }
 .btn:hover{
-	box-shadow: 0px 5px 4px 0px #ddd;
+	border-radius:4px;
+	width:100%;
+
+	transition-duration: 0.2s, 0.2s, 0.2s;
+	transition-delay: 0s, 0.1s, 0.1s;
+}
+.btn:hover .data{
+	opacity:1;
+	transition-property: opacity;
+	transition-delay: 0.3s;
+	transition-duration: 0.2s;
+}
+.btn .data{
+	opacity:0;
+	transition-property: opacity;
+	transition-delay: 0s;
+	transition-duration: 0.2s;
+}
+.btn i{
+	display:inline-block;
+}
+.btn:hover i{
+
+}
+
+
+.btn:hover{
+
 }
 
 .trades-row {
@@ -133,11 +168,18 @@ a.row-link{
 	width:40px;
 	height:40px;
 	margin:0 auto;
+
+	transition-property: border-radius, width;
+	transition-duration: 0.2s, 0.2s;
 }
+
+.icon:hover{
+	border-radius:4px;
+	width:60%;
+}
+
 .icon i{
-	-webkit-transition-property: -webkit-transform, opacity;
 	transition-property: transform, opacity;
-	-webkit-transition-duration: 0.3s, 0.2s;
 	transition-duration: 0.3s, 0.2s;
 	opacity: 1;
 	display:block;
