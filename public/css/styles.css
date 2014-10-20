@@ -101,7 +101,7 @@ h3.title{
 }
 .btn:hover{
 	border-radius:4px;
-	width:100%;
+	width:90px;
 
 	transition-duration: 0.2s, 0.2s, 0.2s;
 	transition-delay: 0s, 0.1s, 0.1s;
@@ -109,7 +109,7 @@ h3.title{
 .btn:hover .data{
 	opacity:1;
 	transition-property: opacity;
-	transition-delay: 0.3s;
+	transition-delay: 0.1s;
 	transition-duration: 0.2s;
 }
 .btn .data{
