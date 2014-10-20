@@ -5,7 +5,9 @@
 	@include('partials.trade-fields')
 	<div class="form-group">
 		<div class="col-xs-12">
-			{{ Form::submit('Submit', ['class' => 'btn btn-default']) }}
+			<button class="btn btn-default">
+				<i class="glyphicon glyphicon-ok"></i> <span class="data">Submit</span>
+			</button>
 		</div>
 	</div>
 {{ Form::close() }}
