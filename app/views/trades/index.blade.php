@@ -64,15 +64,15 @@
 		<div class='col-md-1 col-sm-2 col-xs-6 sold-icon'>
 			@if($trade->sold && $trade->buy_price < $trade->sell_price)
 			<span class="icon icon-success"><i class="glyphicon glyphicon-arrow-up"></i>
-				+{{ $trade->sell_price - $trade->buy_price  }}
+				<span class="data">+{{ $trade->sell_price - $trade->buy_price  }}</span>
 			</span>
 			@elseif($trade->sold && $trade->buy_price == $trade->sell_price)
-			<span class="icon icon-info"><i class="glyphicon glyphicon-sort fa-rotate-90"></i>
-				0
+			<span class="icon icon-info"><i class="glyphicon glyphicon-sort"></i>
+				<span class="data">0</span>
 			</span>
 			@elseif($trade->sold && $trade->buy_price > $trade->sell_price)
 			<span class="icon icon-danger"><i class="glyphicon glyphicon-arrow-down"></i>
-				{{ $trade->sell_price - $trade->buy_price }}
+				<span class="data">{{ $trade->sell_price - $trade->buy_price }}</span>
 			</span>
 			@endif
 
