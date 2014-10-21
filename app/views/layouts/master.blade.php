@@ -2,6 +2,7 @@
 <html>
 
 	<head>
+		<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 		{{ HTML::style('components/bootstrap/dist/css/bootstrap.min.css') }}
 		{{ HTML::style('components/font-awesome/css/font-awesome.min.css') }}
 		{{ HTML::style('components/bootstrap-datepicker/css/datepicker.css') }}
