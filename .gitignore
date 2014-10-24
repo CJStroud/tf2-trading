@@ -8,3 +8,5 @@ composer.lock
 Thumbs.db
 /public/components
 /node_modules
+/public/css
+/public/js
