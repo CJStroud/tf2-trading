@@ -26,10 +26,6 @@ module.exports = function(grunt) {
 			options: {
 				livereload : true,
 			},
-			gruntfile: {
-				files: 'Gruntfile.js',
-				'tasks': ['jshint:gruntfile'],
-			},
 			less: {
 				files: ['assets/less/*'],
 				tasks: ['less'],
@@ -41,17 +37,22 @@ module.exports = function(grunt) {
 		},
 		concat: {
 			options: {
-				separator: ';',
+				separator: '\n',
 			},
 			dist: {
-				src: ['assets/js/*.js'],
+				src: [
+					'public/components/jquery/dist/jquery.min.js',
+					'public/components/bootstrap/dist/js/bootstrap.min.js',
+					'public/components/bootstrap-datepicker/js/bootstrap-datepicker.js',
+					'assets/js/*.js'
+				],
 				dest: 'public/js/<%= pkg.name %>.js',
 			},
 		},
 		uglify: {
 			dist: {
 				files: [{
-					'public/js/<%= pkg.name %>.min.js': ['<%= concat.dist.dest %>']
+					'public/js/<%= pkg.name %>.min.js': ['public/js/<%= pkg.name %>.js']
 				}]
 			}
 		},
