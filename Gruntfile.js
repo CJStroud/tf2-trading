@@ -84,7 +84,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-autoprefixer');
 
-	grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'less']);
+	grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'less', 'autoprefixer']);
 
 };
 
