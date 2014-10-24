@@ -1,0 +1,54 @@
+.row-table-header{
+	border-bottom: 1px solid #ddd;
+	font-weight: bold;
+}
+.trades-row {
+	border-bottom: 1px solid #ddd;
+	padding:10px 0px;
+	cursor:default;
+	transition:background-color 0.2s ease;
+
+	p{
+		margin:0;
+	}
+
+	&:hover{
+		background-color:rgba(0,0,0, 0.05);
+	}
+}
+
+a.row-link{
+	color:#222;
+}
+
+
+
+@media screen and (max-width:770px){
+
+	.trades-row {
+		.row-table-cell:nth-child(1)::before {
+			content: 'Item Name:';
+		}
+		.row-table-cell:nth-child(2)::before {
+			content: 'Buy Price:';
+		}
+		.row-table-cell:nth-child(3)::before {
+			content: 'Sell Price:';
+		}
+		.row-table-cell:nth-child(4)::before {
+			content: 'Purchased date:';
+		}
+		.row-table-cell:nth-child(5)::before {
+			content: 'Sold date:';
+		}
+		div::before {
+			font-weight: bold;
+			float:left;
+			margin-right:20px;
+			text-align: right;
+		}
+		div{
+			padding:5px;
+		}
+	}
+}

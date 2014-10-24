@@ -1,0 +1,71 @@
+@media screen and (max-width:770px){
+
+	.btn{
+		width:100%;
+	}
+}
+
+
+.btn-default{
+	background-color:#34495e;
+	color:#fff;
+	border-color:#39556f;
+
+	&:hover, &:focus{
+		background-color:#253748;
+		color:#fff;
+	}
+}
+
+.btn{
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+	display: block;
+	font-size: 100%;
+	background-image: none;
+	padding-top:9px;
+	border-radius: 50%;
+	margin:0 auto;
+	width:40px;
+	height:40px;
+	-webkit-transition-property: border-radius, width, height;
+	transition-property: border-radius, width, height;
+	transition-duration: 0.2s, 0.2s, 0.2s;
+	transition-delay: 0.1s, 0s, 0s;
+
+	i{
+		margin-right: 3px;
+		display:inline-block;
+	}
+
+	&:hover{
+		border-radius:4px;
+		width:90px;
+
+		transition-duration: 0.2s, 0.2s, 0.2s;
+		transition-delay: 0s, 0.1s, 0.1s;
+
+		.data{
+			opacity:1;
+			transition-property: opacity;
+			transition-delay: 0.1s;
+			transition-duration: 0.2s;
+		}
+	}
+
+	.data{
+		opacity:0;
+		transition-property: opacity;
+		font-weight: bold;
+		transition-delay: 0s;
+		transition-duration: 0.2s;
+	}
+
+}
+
+.button-group .btn{
+	margin-right:10px;
+}
+.button-group-center{
+	margin: 0 auto;
+	display: table;
+}

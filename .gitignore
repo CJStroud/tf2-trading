@@ -7,3 +7,6 @@ composer.lock
 .DS_Store
 Thumbs.db
 /public/components
+/node_modules
+/public/css
+/public/js

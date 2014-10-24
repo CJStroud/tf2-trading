@@ -37,16 +37,6 @@
 		</div>
 	</body>
 	@section('javascript')
-		{{ HTML::script('components/jquery/dist/jquery.min.js') }}
-		{{ HTML::script('components/bootstrap/dist/js/bootstrap.min.js') }}
-		{{ HTML::script('components/bootstrap-datepicker/js/bootstrap-datepicker.js') }}
-
-		<script type="text/javascript">
-			$(document).ready(function(){
-				$('.currency-type').change(function(){
-					$('.currency-form').submit();
-				});
-			});
-		</script>
+		{{ HTML::script('js/tf2-trading.js') }}
 	@show
 </html>
