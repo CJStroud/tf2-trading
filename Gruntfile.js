@@ -65,6 +65,15 @@ module.exports = function(grunt) {
 					module: true
 				}
 			}
+		},
+		autoprefixer: {
+			single_file: {
+				options: {
+					// Target-specific options go here.
+				},
+				src: 'public/css/styles.css',
+				dest: 'public/css/styles.css'
+			},
 		}
 
 	});
@@ -73,6 +82,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-autoprefixer');
 
 	grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'less']);
 
